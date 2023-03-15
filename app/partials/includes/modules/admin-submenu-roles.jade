@@ -1,0 +1,27 @@
+
+//- This Source Code Form is subject to the terms of the Mozilla Public
+//- License, v. 2.0. If a copy of the MPL was not distributed with this
+//- file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//-
+//- Copyright (c) 2021-present Kaleidos Ventures SL
+
+section.admin-submenu.admin-submenu-roles(ng-if="roles")
+    nav
+        ul
+            li(
+                ng-repeat="item in roles",
+                ng-class="{active: role.id == item.id}"
+            )
+                a(
+                    href=""
+                    ng-click="ctrl.setRole(item)"
+                )
+                  span.single-role {{ item.name }}
+
+        div(tg-new-role)
+            button.btn-small.btn-menu-full.add-button(
+                variant="primary"
+                title="{{'ADMIN.SUBMENU_ROLES.TITLE_ACTION_NEW_ROLE' | translate}}",
+                translate="ADMIN.SUBMENU_ROLES.ACTION_NEW_ROLE"
+            )
+            input(type="text", class="hidden new")

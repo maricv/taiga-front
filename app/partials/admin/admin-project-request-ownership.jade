@@ -1,0 +1,22 @@
+
+//- This Source Code Form is subject to the terms of the Mozilla Public
+//- License, v. 2.0. If a copy of the MPL was not distributed with this
+//- file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//-
+//- Copyright (c) 2021-present Kaleidos Ventures SL
+
+.owner-avatar
+    img(tg-avatar="owner", alt="{{::owner.full_name_display}}")
+
+.owner-info
+    .title {{ 'ADMIN.PROJECT_PROFILE.PROJECT_OWNER' | translate }}
+    .owner-name {{::owner.full_name_display}}
+
+.request
+    a(href="", ng-click="requestOwnership()") {{ 'ADMIN.PROJECT_PROFILE.REQUEST_OWNERSHIP' | translate }}
+
+    p.limit-message(
+        ng-if="!canRequest"
+        translate="ADMIN.PROJECT_PROFILE.REQUEST_OWNERSHIP_LIMIT"
+        translate-values="{ 'maxProjects': owner.max_private_projects}"
+    ) {{ 'ADMIN.PROJECT_PROFILE.REQUEST_OWNERSHIP_LIMIT ' | translate }}

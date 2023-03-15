@@ -1,0 +1,34 @@
+
+//- This Source Code Form is subject to the terms of the Mozilla Public
+//- License, v. 2.0. If a copy of the MPL was not distributed with this
+//- file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//-
+//- Copyright (c) 2021-present Kaleidos Ventures SL
+
+.wiki-username-edition
+    .avatar
+        img(
+            style!="background-color: <%- user.avatar.bg %>"
+            src!="<%- user.avatar.url %>"
+            alt!="<%- user.name %>"
+        )
+    .wiki-user-modification
+        span.description(translate="WIKI.SUMMARY.LAST_MODIFICATION")
+        span.username <%- user.name %>
+
+.wiki-last-modified
+    span.number <%- lastModifiedDate %>
+    span.description(translate="WIKI.SUMMARY.LAST_EDIT")
+
+.wiki-times-edited
+    span.number <%- totalEditions %>
+    span.description(translate="WIKI.SUMMARY.TIMES_EDITED")
+
+tg-svg.remove(
+    tg-check-permission="delete_wiki_page"
+    title="{{'WIKI.REMOVE' | translate}}"
+    ng-click="ctrl.delete()"
+    svg-icon="icon-trash"
+    ng-if="wiki.id"
+
+)

@@ -1,0 +1,27 @@
+
+//- This Source Code Form is subject to the terms of the Mozilla Public
+//- License, v. 2.0. If a copy of the MPL was not distributed with this
+//- file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//-
+//- Copyright (c) 2021-present Kaleidos Ventures SL
+
+.avatar
+    img(
+        src!="<%- imgurl %>"
+        alt!="<%- full_name %>"
+        style!="background-color: <%- bg %>"
+    )
+    .user-data
+        .name
+            span(ng-non-bindable) <%- full_name %>
+            <% if (isOwner) { %>
+            tg-svg.owner-badge(
+                svg-icon="icon-badge",
+                svg-title-translate="COMMON.OWNER"
+            )
+            <% }  %>
+        .data
+            span.email <%- email %>
+            <% if (pending) { %>
+            span.pending <%- pending %>
+            <% }  %>

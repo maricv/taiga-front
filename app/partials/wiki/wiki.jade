@@ -1,0 +1,43 @@
+
+//- This Source Code Form is subject to the terms of the Mozilla Public
+//- License, v. 2.0. If a copy of the MPL was not distributed with this
+//- file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//-
+//- Copyright (c) 2021-present Kaleidos Ventures SL
+
+doctype html
+
+div.wrapper(
+    ng-controller="WikiDetailController as ctrl"
+    ng-init="section='wiki'"
+)
+    tg-project-menu
+    sidebar.menu-secondary.wiki-nav(
+        ng-if="linksVisible"
+        tg-wiki-nav
+        ng-model="wikiLinks"
+    )
+    section.main.wiki.wiki-main(ng-if="attachmentsReady")
+        header
+            h1(translate="PROJECT.SECTION.WIKI")
+
+        tg-wiki-wysiwyg(model="wiki")
+
+        .summary.wiki-summary(
+            tg-wiki-summary
+            ng-model="wiki"
+            ng-if="wiki.id"
+        )
+
+        tg-attachments-full(
+            ng-if="wiki.id"
+            obj-id="wiki.id"
+            type="wiki_page",
+            project-id="projectId"
+            edit-permission = "modify_wiki_page"
+        )
+
+        tg-wiki-history(
+            ng-if="wiki.id"
+            wiki-id="wiki.id"
+        )

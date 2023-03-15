@@ -1,0 +1,23 @@
+
+//- This Source Code Form is subject to the terms of the Mozilla Public
+//- License, v. 2.0. If a copy of the MPL was not distributed with this
+//- file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//-
+//- Copyright (c) 2021-present Kaleidos Ventures SL
+
+.ticket-section-label
+    span {{ 'COMMON.FIELDS.POINTS'|translate }}
+
+ul.points-per-role
+    <% _.each(roles, function(role) { %>
+    li.ticket-role-points.total(
+        class!="<% if(editable){ %>clickable<% } %>"
+        data-role-id!="<%- role.id %>"
+        title!="<%- role.name %>"
+    )
+        span.role(tg-loading!="<%- loading == role.id %>") <%- role.name %>
+        span.points <%- role.points %>
+    <% }); %>
+    li.ticket-role-points.total
+        span.role(translate="US.TOTAL_POINTS")
+        span.points <%- totalPoints %>

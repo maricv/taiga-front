@@ -1,0 +1,19 @@
+
+//- This Source Code Form is subject to the terms of the Mozilla Public
+//- License, v. 2.0. If a copy of the MPL was not distributed with this
+//- file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//-
+//- Copyright (c) 2021-present Kaleidos Ventures SL
+
+section.admin-membership-table.basic-table
+    .row.title
+        div.header-member(translate="ADMIN.MEMBERSHIP.COLUMN_MEMBER")
+        div.header-admin(translate="ADMIN.MEMBERSHIP.COLUMN_ADMIN")
+        div.header-role(translate="ADMIN.MEMBERSHIP.COLUMN_ROLE")
+        div.header-status(translate="ADMIN.MEMBERSHIP.COLUMN_STATUS")
+
+    .row(ng-repeat="member in memberships")
+        div.row-member(tg-memberships-row-avatar="member")
+        div.row-admin(tg-memberships-row-admin-checkbox="member")
+        div.row-role(tg-memberships-row-role-selector="member")
+        div.row-status(tg-memberships-row-actions="member")

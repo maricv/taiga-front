@@ -1,0 +1,18 @@
+
+//- This Source Code Form is subject to the terms of the Mozilla Public
+//- License, v. 2.0. If a copy of the MPL was not distributed with this
+//- file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//-
+//- Copyright (c) 2021-present Kaleidos Ventures SL
+
+.create-project-warning(
+    ng-if="isPrivate && !canCreatePrivateProjects.valid && canCreatePrivateProjects.reason == 'max_private_projects'"
+)
+    tg-svg(svg-icon="icon-exclamation")
+    span {{ 'PROJECT.CREATE.MAX_PRIVATE_PROJECTS' | translate }}
+
+.create-project-warning(
+    ng-if="!isPrivate && !canCreatePublicProjects.valid && canCreatePublicProjects.reason == 'max_public_projects'"
+)
+    tg-svg(svg-icon="icon-exclamation")
+    span {{ 'PROJECT.CREATE.MAX_PUBLIC_PROJECTS' | translate }}

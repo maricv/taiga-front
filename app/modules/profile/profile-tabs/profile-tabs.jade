@@ -1,0 +1,20 @@
+
+//- This Source Code Form is subject to the terms of the Mozilla Public
+//- License, v. 2.0. If a copy of the MPL was not distributed with this
+//- file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//-
+//- Copyright (c) 2021-present Kaleidos Ventures SL
+
+div
+    nav.profile-content-tabs
+        a.tab(
+            href=""
+            ng-repeat="tab in ::vm.tabs"
+            title="{{tab.title}}"
+            ng-click="vm.toggleTab(tab)"
+            ng-class="{active: tab.active}"
+        )
+            tg-svg(svg-icon="{{::tab.icon}}")
+            span {{::tab.name}}
+
+    ng-transclude

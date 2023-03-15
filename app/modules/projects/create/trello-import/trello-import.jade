@@ -1,0 +1,38 @@
+
+//- This Source Code Form is subject to the terms of the Mozilla Public
+//- License, v. 2.0. If a copy of the MPL was not distributed with this
+//- file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//-
+//- Copyright (c) 2021-present Kaleidos Ventures SL
+
+tg-import-project-selector(
+    class="import-project-selector"
+    logo="/#{v}/images/import-logos/trello.png"
+    search="{{ 'PROJECT.IMPORT.TRELLO.CHOOSE_PROJECT' | translate }}"
+    no-projects-msg="{{ 'PROJECT.IMPORT.TRELLO.NO_PROJECTS' | translate }}"
+    projects="vm.projects"
+    on-cancel="vm.onCancel()"
+    on-select-project="vm.onSelectProject(project)"
+    ng-if="vm.step == 'project-select-trello'"
+)
+
+tg-trello-import-project-form(
+    class="import-project-form"
+    ng-if="vm.step == 'project-form-trello'"
+    project="vm.project"
+    members="vm.members"
+    fetching-users="vm.fetchingUsers"
+    on-save-project-details="vm.onSaveProjectDetails(project)"
+    on-cancel-form="vm.step = 'project-select-trello'"
+)
+
+tg-import-project-members(
+    class="import-project-members"
+    ng-if="vm.step == 'project-members-trello'"
+    platform="Trello"
+    logo="/#{v}/images/import-logos/trello.png"
+    project="vm.project"
+    members="vm.members"
+    on-submit="vm.submitUserSelection(users)"
+    on-cancel="vm.onCancelMemberSelection()"
+)

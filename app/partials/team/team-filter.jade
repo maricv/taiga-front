@@ -1,0 +1,28 @@
+
+//- This Source Code Form is subject to the terms of the Mozilla Public
+//- License, v. 2.0. If a copy of the MPL was not distributed with this
+//- file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//-
+//- Copyright (c) 2021-present Kaleidos Ventures SL
+
+ul
+    li(
+        ng-class="{active: !filtersRole.id}"
+    )
+        a(
+            ng-click="ctrl.setRole()"
+            href=""
+        )
+          span.title(translate="TEAM.SECTION_FILTER_ALL")
+          tg-svg(svg-icon="icon-arrow-right")
+
+    li(
+        ng-repeat="role in roles"
+        ng-class="{active: role.id == filtersRole.id}"
+    )
+        a(
+            ng-click="ctrl.setRole(role)"
+            href=""
+        )
+            span.title(tg-bo-bind="role.name")
+            tg-svg(svg-icon="icon-arrow-right")

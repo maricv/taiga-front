@@ -1,0 +1,26 @@
+
+//- This Source Code Form is subject to the terms of the Mozilla Public
+//- License, v. 2.0. If a copy of the MPL was not distributed with this
+//- file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//-
+//- Copyright (c) 2021-present Kaleidos Ventures SL
+
+div.search-result-table-container(ng-class="{'hidden': !epics.length}", tg-bind-scope)
+    div.search-result-table-header
+        div.row.title
+            div.user-stories(translate="SEARCH.FILTER_EPICS")
+            div.status(translate="COMMON.FIELDS.STATUS")
+    div.search-result-table-body
+        div.row.table-main(ng-repeat="epic in epics track by epic.id")
+            div.user-stories
+                div.user-story-name
+                    a(
+                        href=""
+                        tg-nav="project-epics-detail:project=project.slug,ref=epic.ref"
+                    )
+                        span.ref(tg-bo-ref="epic.ref")
+                        span {{ epic.subject | emojify }}
+            div.status(tg-listitem-epic-status="epic")
+
+div.empty-large(ng-class="{'hidden': epics.length}")
+    include ./empty-search-results

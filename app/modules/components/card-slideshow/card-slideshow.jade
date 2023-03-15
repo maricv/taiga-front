@@ -1,0 +1,25 @@
+
+//- This Source Code Form is subject to the terms of the Mozilla Public
+//- License, v. 2.0. If a copy of the MPL was not distributed with this
+//- file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//-
+//- Copyright (c) 2021-present Kaleidos Ventures SL
+
+.card-slideshow(ng-if="vm.images.size")
+    tg-svg.slideshow-icon.slideshow-left(
+        ng-click="vm.previous()"
+        ng-if="vm.images.size > 1"
+        svg-icon="icon-arrow-left"
+    )
+    tg-svg.slideshow-icon.slideshow-right(
+        ng-click="vm.next()"
+        ng-if="vm.images.size > 1"
+        svg-icon="icon-arrow-right"
+    )
+
+    .card-slideshow-wrapper(
+        ng-if="$index == vm.index"
+        tg-repeat="image in vm.images track by image.get('id')"
+    )
+        tg-preload-image(preload-src="{{image.get('thumbnail_card_url')}}")
+            img(ng-src="{{image.get('thumbnail_card_url')}}")

@@ -1,0 +1,23 @@
+
+//- This Source Code Form is subject to the terms of the Mozilla Public
+//- License, v. 2.0. If a copy of the MPL was not distributed with this
+//- file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//-
+//- Copyright (c) 2021-present Kaleidos Ventures SL
+
+.type-data(class!="<% if(editable){ %>clickable<% }%>")
+    .label.level-name(translate="COMMON.FIELDS.TYPE")
+    .level-data
+        span.label <%- type.name %>
+        span.level-color(style!="background-color:<%- type.color %>")
+
+    ul.popover.pop-type
+        <% _.each(typees, function(tp) { %>
+        li
+            a.type(
+                href=""
+                title!="<%- tp.name %>"
+                data-type-id!="<%- tp.id %>"
+            )
+                span.item-text <%- tp.name %>
+        <% }); %>

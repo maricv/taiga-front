@@ -1,0 +1,27 @@
+
+//- This Source Code Form is subject to the terms of the Mozilla Public
+//- License, v. 2.0. If a copy of the MPL was not distributed with this
+//- file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//-
+//- Copyright (c) 2021-present Kaleidos Ventures SL
+
+tg-lightbox-close
+
+div.content
+    tg-svg(svg-icon="icon-exclamation")
+
+    h2.title {{'LIGHTBOX.LEAVE_PROJECT_WARNING.TITLE' | translate}}
+
+    div(ng-if="isCurrentUser")
+        p {{'LIGHTBOX.LEAVE_PROJECT_WARNING.CURRENT_USER_OWNER.DESC' | translate}}
+
+        a.btn-big(
+            tg-nav="project-admin-home:project=project.slug"
+            translate="LIGHTBOX.LEAVE_PROJECT_WARNING.CURRENT_USER_OWNER.BUTTON"
+        )
+
+    div(ng-if="!isCurrentUser")
+        p {{'LIGHTBOX.LEAVE_PROJECT_WARNING.OTHER_USER_OWNER.DESC' | translate}}
+
+        a.button-big(tg-nav="project-admin-home:project=project.slug", href="")
+            span(translate="LIGHTBOX.LEAVE_PROJECT_WARNING.OTHER_USER_OWNER.BUTTON")

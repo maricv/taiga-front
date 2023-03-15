@@ -1,0 +1,37 @@
+
+//- This Source Code Form is subject to the terms of the Mozilla Public
+//- License, v. 2.0. If a copy of the MPL was not distributed with this
+//- file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//-
+//- Copyright (c) 2021-present Kaleidos Ventures SL
+
+.create-project-privacity(role="group")
+    fieldset
+        input(
+            type="radio"
+            name="is_private"
+            id="template-public"
+            data-required="true"
+            aria-hidden="true"
+            ng-value="false"
+            ng-model="vm.projectForm.is_private"
+            required
+            ng-checked="vm.canCreatePublicProjects"
+        )
+        label(for="template-public")
+            tg-svg(svg-icon="icon-discover")
+            span(translate="PROJECT.CREATE.PUBLIC_PROJECT")
+    fieldset
+        input(
+            type="radio"
+            name="is_private"
+            id="template-private"
+            data-required="true"
+            ng-value="true"
+            ng-model="vm.projectForm.is_private"
+            aria-hidden="true"
+            required
+        )
+        label(for="template-private")
+            tg-svg(svg-icon="icon-private")
+            span(translate="PROJECT.CREATE.PRIVATE_PROJECT")
