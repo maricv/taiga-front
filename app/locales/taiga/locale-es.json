@@ -1561,7 +1561,7 @@
         "TITLE_DELETE_ACTION": "Eliminar Tarea",
         "LIGHTBOX_TITLE_BLOKING_TASK": "Tarea bloqueada",
         "FIELDS": {
-            "IS_IOCAINE": "Tiene iocaína"
+            "IS_IOCAINE": "Tiene Ayuda"
         },
         "TITLE_ACTION_IOCAINE": "¿Te sientes fuera de tu zona de confort en una tarea? Asegúrate de que los demás están al tanto de ello, marca el check de la Iocaína al editar una tarea. ¡Igual que era posible llegar a ser inmune a este veneno mortal a base de consumir pequeñas dosis a lo largo del tiempo, es posible conseguir mejor en lo que estás haciendo si afrontas de vez en cuando esta clase de retos!"
     },
@@ -1690,17 +1690,17 @@
         "PAGE_DESCRIPTION": "EL panel de equipo, para mostrar a todos los miembros del proyecto {{projectName}}: {{projectDescription}}",
         "SECTION_NAME": "Equipo",
         "PLACEHOLDER_INPUT_SEARCH": "Buscar por nombre completo...",
-        "COLUMN_MR_WOLF": "Sr. Lobo",
+        "COLUMN_MR_WOLF": "EXELENTE",
         "EXPLANATION_COLUMN_MR_WOLF": "Solicitudes cerradas",
-        "COLUMN_IOCAINE": "Bebedor de Iocaína",
+        "COLUMN_IOCAINE": "Solicitador de Ayuda",
         "EXPLANATION_COLUMN_IOCAINE": "Dósis de iocaína ingeridas",
-        "COLUMN_CERVANTES": "Cervantes",
+        "COLUMN_CERVANTES": "EFICIENTE",
         "EXPLANATION_COLUMN_CERVANTES": "Páginas de Archivos Necesarios editadas",
-        "COLUMN_BUG_HUNTER": "Cazador de Bugs",
+        "COLUMN_BUG_HUNTER": "Solucionador de Problemas",
         "EXPLANATION_COLUMN_BUG_HUNTER": "Solicitudes reportadas",
-        "COLUMN_NIGHT_SHIFT": "Turno de noche",
+        "COLUMN_NIGHT_SHIFT": "Trabaja de Noche",
         "EXPLANATION_COLUMN_NIGHT_SHIFT": "Tareas cerradas",
-        "COLUMN_TOTAL_POWER": "Potencia Total",
+        "COLUMN_TOTAL_POWER": "Total",
         "EXPLANATION_COLUMN_TOTAL_POWER": "Puntos Totales",
         "SECTION_TITLE_TEAM": "Equipo >",
         "SECTION_FILTER_ALL": "Todo",
