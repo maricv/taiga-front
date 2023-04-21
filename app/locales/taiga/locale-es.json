@@ -14,7 +14,7 @@
         "UNLINK": "Desvincular",
         "CREATE": "Crear",
         "ADD": "Añadir",
-        "BACK": "Back",
+        "BACK": "Volver",
         "COPY_TO_CLIPBOARD": "Copiar al portapapeles",
         "COPIED_TO_CLIPBOARD": "El texto se ha copiado al portapapeles",
         "MOVE_TO_TOP": "Mover arriba",
@@ -334,12 +334,12 @@
     },
     "LOGIN_COMMON": {
         "HEADER": "Ya tengo una cuenta en Gestion de Proyectos Integrados",
-        "PLACEHOLDER_AUTH_NAME": "Nombre de usuario o correo electrónico (distingue mayúsculas y minúsculas)",
+        "PLACEHOLDER_AUTH_NAME": "Nombre de usuario o correo electrónico",
         "LINK_FORGOT_PASSWORD": "¿La olvidaste?",
         "TITLE_LINK_FORGOT_PASSWORD": "¿Olvidó su contraseña?",
         "ACTION_ENTER": "Entrar",
         "ACTION_SIGN_IN": "Iniciar sesión",
-        "PLACEHOLDER_AUTH_PASSWORD": "Contraseña (distingue mayúsculas y minúsculas)",
+        "PLACEHOLDER_AUTH_PASSWORD": "Contraseña",
         "ALT_LOGIN": "O haz login con"
     },
     "LOGIN_FORM": {
@@ -409,7 +409,7 @@
         "EMPTY_PROJECT_LIST": "Aún no tienes ningún proyecto",
         "WORKING_ON_SECTION": "Trabajando en",
         "WATCHING_SECTION": "Observando",
-        "DASHBOARD": "Dashboard de proyecto",
+        "DASHBOARD": "Dashboard por Pizarra",
         "SET_HIDDEN": "Establecer como oculto",
         "SET_VISIBLE": "Establecer como visible",
         "NO_HIDDEN_ITEMS": "No tienes ítems ocultos",
@@ -693,7 +693,7 @@
         "ROLES": {
             "PAGE_TITLE": "Roles - {{projectName}}",
             "WARNING_NO_ROLE": "Ojo, ningún rol en tu proyecto podrá estimar tareas asignadas",
-            "HELP_ROLE_ENABLED": "This role is part of the roles involved in estimating user story points.",
+            "HELP_ROLE_ENABLED": "Este rol es parte de los roles involucrados en los puntos de historias del usuario.",
             "DISABLE_COMPUTABLE_ALERT_TITLE": "¿Seguro de que deseas deshabilitar las estimaciones para este rol?",
             "DISABLE_COMPUTABLE_ALERT_SUBTITLE": "Si desactivas los permisos de estimación para el rol {{roleName}} todas las estimaciones previas hechas por ese rol se eliminarán",
             "COUNT_MEMBERS": "{{ role.members_count }} miembros con este rol",
@@ -780,8 +780,8 @@
             "DEFAULT_DELETE_MESSAGE": "la invitación enviada a"
         },
         "DEFAULT_VALUES": {
-            "LABEL_EPIC_STATUS": "Selector del estado de Epic",
-            "LABEL_US_STATUS": "Selector del estado de las historias del usuario",
+            "LABEL_EPIC_STATUS": "Selector del estado de la tareas de las unidades",
+            "LABEL_US_STATUS": "Selector del estado de las historias de usuario por tarea asignada",
             "LABEL_POINTS": "Selector de puntos",
             "LABEL_TASK_STATUS": "Selector del estado de las tareas",
             "LABEL_ISSUE_TYPE": "Selector de tipo de problema",
@@ -900,7 +900,7 @@
     },
     "PROJECT": {
         "PAGE_TITLE": "{{projectName}}",
-        "HELP": "Reorder your projects to set at the top the most used ones.<br/> The top 4 projects will appear in the top navigation bar project list",
+        "HELP": " Reordene sus proyectos para establecer en la parte superior las mas utilizadas.<br/> Los 4 proyectos principales apareceran en la lista de proyectos de la barra de navegacion superior",
         "PRIVATE": "Proyecto privado",
         "LOOKING_FOR_PEOPLE": "Este proyecto está buscando a gente",
         "FANS_COUNTER_TITLE": "{total, plural, =1{un fan} other{# fans}}",
@@ -995,7 +995,7 @@
             "INVITE": "Invitar al proyecto",
             "SOLO_PROJECT": "Estarás solo en este proyecto",
             "INVITE_LATER": "(Podrás invitar otros miembros más adelante)",
-            "BACK": "Back",
+            "BACK": "Volver",
             "MAX_PRIVATE_PROJECTS": "Desafortunadamente, has alcanzado el número máximo de proyectos privados.\nSi desea aumentar este límite, por favor contacte al administrador.",
             "MAX_PUBLIC_PROJECTS": "Desafortunadamente, has alcanzado el número máximo de proyectos públicos.\nSi desea aumentar este limite, por favor contacte al administrador.",
             "PUBLIC_PROJECT": "Proyecto público",
@@ -1039,7 +1039,7 @@
             "PROJECT_SELECTOR": {
                 "NO_RESULTS": "Parece que no se encontro nada con este criterio de busqueda",
                 "ACTION_SEARCH": "buscar",
-                "ACTION_BACK": "Back"
+                "ACTION_BACK": "Volver"
             },
             "PROJECT_RESTRICTIONS": {
                 "PROJECT_MEMBERS_DESC_PRIVATE": "El proyecto que estas intentando importar tiene {{members}} miembros incluyéndote a ti, desafortunadamente tu plan actual permite como máximo {{max_memberships}} miembros por proyecto privado. Si quieres aumentar este limite, por favor contacta al administrador.",
@@ -1601,7 +1601,7 @@
         "PAGE_TITLE": "Solicitudes - {{projectName}}",
         "PAGE_DESCRIPTION": "El panel de la lista de incidencias del proyecto {{projectName}}: {{projectDescription}}",
         "SECTION_NAME": "Solicitud",
-        "ACTION_NEW_ISSUE": "NEW ISSUE",
+        "ACTION_NEW_ISSUE": "Nueva Solicitud",
         "ACTION_ATTACH_SPRINT": "Vincular solicitud a una tarea específica",
         "ACTION_DETACH_SPRINT": "Desvincular solicitud de tarea específica",
         "EXTERNAL_REFERENCE": "Esta solicitud ha sido creada a partir de ",
@@ -1692,15 +1692,15 @@
         "PLACEHOLDER_INPUT_SEARCH": "Buscar por nombre completo...",
         "COLUMN_MR_WOLF": "EXELENTE",
         "EXPLANATION_COLUMN_MR_WOLF": "Solicitudes cerradas",
-        "COLUMN_IOCAINE": "Solicitador de Ayuda",
+        "COLUMN_IOCAINE": "SOLICITADOR DE AYUDA",
         "EXPLANATION_COLUMN_IOCAINE": "Dósis de iocaína ingeridas",
         "COLUMN_CERVANTES": "EFICIENTE",
         "EXPLANATION_COLUMN_CERVANTES": "Páginas de Archivos Necesarios editadas",
-        "COLUMN_BUG_HUNTER": "Solucionador de Problemas",
+        "COLUMN_BUG_HUNTER": "SOLUCIONADOR DE PROBLEMAS",
         "EXPLANATION_COLUMN_BUG_HUNTER": "Solicitudes reportadas",
-        "COLUMN_NIGHT_SHIFT": "Trabaja de Noche",
+        "COLUMN_NIGHT_SHIFT": "TRABAJA DE NOCHE",
         "EXPLANATION_COLUMN_NIGHT_SHIFT": "Tareas cerradas",
-        "COLUMN_TOTAL_POWER": "Total",
+        "COLUMN_TOTAL_POWER": "TOTAL",
         "EXPLANATION_COLUMN_TOTAL_POWER": "Puntos Totales",
         "SECTION_TITLE_TEAM": "Equipo >",
         "SECTION_FILTER_ALL": "Todo",
@@ -1874,7 +1874,7 @@
     "JOYRIDE": {
         "NAV": {
             "NEXT": "Siguiente",
-            "BACK": "Back",
+            "BACK": "Atras",
             "SKIP": "Saltar paso",
             "DONE": "Hecha"
         },
