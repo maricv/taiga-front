@@ -132,7 +132,7 @@
         "USER_STORY": "Tarea Asignada",
         "TASK": "Tarea",
         "ISSUE": "Solicitud",
-        "EPIC": "Tarea de las Unidades",
+        "EPIC": "Tareas de las Unidades",
         "TAGS": {
             "PLACEHOLDER": "Introducir etiqueta",
             "DELETE": "Borrar etiqueta",
@@ -409,7 +409,7 @@
         "EMPTY_PROJECT_LIST": "Aún no tienes ningún proyecto",
         "WORKING_ON_SECTION": "Trabajando en",
         "WATCHING_SECTION": "Observando",
-        "DASHBOARD": "Dashboard por Pizarra",
+        "DASHBOARD": "Pizarra",
         "SET_HIDDEN": "Establecer como oculto",
         "SET_VISIBLE": "Establecer como visible",
         "NO_HIDDEN_ITEMS": "No tienes ítems ocultos",
@@ -1003,8 +1003,8 @@
         },
         "COMMON": {
             "DETAILS": "Nuevos detalles del proyecto",
-            "PROJECT_TITLE": "Project Name (Required)",
-            "PROJECT_DESCRIPTION": "Project Description (Required)"
+            "PROJECT_TITLE": "Nombre de Proyecto (Obligatorio)",
+            "PROJECT_DESCRIPTION": "Descripcion de Proyecto (Obligatorio)"
         },
         "DUPLICATE": {
             "TITLE": "Duplicar Proyecto",
