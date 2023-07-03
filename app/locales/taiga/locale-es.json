@@ -132,7 +132,7 @@
         "USER_STORY": "Tarea Asignada",
         "TASK": "Tarea",
         "ISSUE": "Solicitud",
-        "EPIC": "Tareas de las Unidades",
+        "EPIC": "Proyecto",
         "TAGS": {
             "PLACEHOLDER": "Introducir etiqueta",
             "DELETE": "Borrar etiqueta",
