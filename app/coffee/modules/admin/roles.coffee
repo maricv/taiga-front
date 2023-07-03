@@ -349,6 +349,15 @@ RolePermissionsDirective = ($rootscope, $repo, $confirm, $compile) ->
 
             categories = []
 
+            console.log("test:", role)
+
+            _role = `${role.name}`.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            ejecutivo = _role == "ejecutivo"
+            auxiliar = _role == "auxiliar"
+            administrativo = _role == "administrativo"
+            tecnico = _role == "técnico" || "tecnico"
+
+
             epicPermissions = [
                 { key: "view_epics", name: "COMMON.PERMISIONS_CATEGORIES.EPICS.VIEW_EPICS"}
                 { key: "add_epic", name: "COMMON.PERMISIONS_CATEGORIES.EPICS.ADD_EPICS"}
@@ -374,54 +383,68 @@ RolePermissionsDirective = ($rootscope, $repo, $confirm, $compile) ->
                 permissions: setActivePermissions(milestonePermissions)
             })
 
-            userStoryPermissions = [
-                { key: "view_us", name: "COMMON.PERMISIONS_CATEGORIES.USER_STORIES.VIEW_USER_STORIES"}
-                { key: "add_us", name: "COMMON.PERMISIONS_CATEGORIES.USER_STORIES.ADD_USER_STORIES"}
-                { key: "modify_us", name: "COMMON.PERMISIONS_CATEGORIES.USER_STORIES.MODIFY_USER_STORIES"}
-                { key: "comment_us", name: "COMMON.PERMISIONS_CATEGORIES.USER_STORIES.COMMENT_USER_STORIES"}
-                { key: "delete_us", name: "COMMON.PERMISIONS_CATEGORIES.USER_STORIES.DELETE_USER_STORIES"}
-            ]
+            userStoryPermissions = []
+            userStoryPermissions.push({ key: "view_us", name: "COMMON.PERMISIONS_CATEGORIES.USER_STORIES.VIEW_USER_STORIES"})
+            if !auxiliar
+                userStoryPermissions.push({ key: "add_us", name: "COMMON.PERMISIONS_CATEGORIES.USER_STORIES.ADD_USER_STORIES"})
+            if ejecutivo
+                userStoryPermissions.push({ key: "modify_us", name: "COMMON.PERMISIONS_CATEGORIES.USER_STORIES.MODIFY_USER_STORIES"})
+            userStoryPermissions.push({ key: "comment_us", name: "COMMON.PERMISIONS_CATEGORIES.USER_STORIES.COMMENT_USER_STORIES"})
+            if ejecutivo
+                userStoryPermissions.push({ key: "delete_us", name: "COMMON.PERMISIONS_CATEGORIES.USER_STORIES.DELETE_USER_STORIES"})
+
 
             categories.push({
                 name: "COMMON.PERMISIONS_CATEGORIES.USER_STORIES.NAME",
                 permissions: setActivePermissions(userStoryPermissions)
             })
 
-            taskPermissions = [
-                { key: "view_tasks", name: "COMMON.PERMISIONS_CATEGORIES.TASKS.VIEW_TASKS"}
-                { key: "add_task", name: "COMMON.PERMISIONS_CATEGORIES.TASKS.ADD_TASKS"}
-                { key: "modify_task", name: "COMMON.PERMISIONS_CATEGORIES.TASKS.MODIFY_TASKS"}
-                { key: "comment_task", name: "COMMON.PERMISIONS_CATEGORIES.TASKS.COMMENT_TASKS"}
-                { key: "delete_task", name: "COMMON.PERMISIONS_CATEGORIES.TASKS.DELETE_TASKS"}
-            ]
+            taskPermissions = []
+
+            taskPermissions.push({ key: "view_tasks", name: "COMMON.PERMISIONS_CATEGORIES.TASKS.VIEW_TASKS"})
+            if !auxiliar
+                taskPermissions.push({ key: "add_task", name: "COMMON.PERMISIONS_CATEGORIES.TASKS.ADD_TASKS"})
+                if !tecnico
+                    taskPermissions.push({ key: "modify_task", name: "COMMON.PERMISIONS_CATEGORIES.TASKS.MODIFY_TASKS"})
+
+            taskPermissions.push({ key: "comment_task", name: "COMMON.PERMISIONS_CATEGORIES.TASKS.COMMENT_TASKS"})
+            if !auxiliar and !tecnico
+                taskPermissions.push({ key: "delete_task", name: "COMMON.PERMISIONS_CATEGORIES.TASKS.DELETE_TASKS"})
+
 
             categories.push({
                 name: "COMMON.PERMISIONS_CATEGORIES.TASKS.NAME" ,
                 permissions: setActivePermissions(taskPermissions)
             })
 
-            issuePermissions = [
-                { key: "view_issues", name: "COMMON.PERMISIONS_CATEGORIES.ISSUES.VIEW_ISSUES"}
-                { key: "add_issue", name: "COMMON.PERMISIONS_CATEGORIES.ISSUES.ADD_ISSUES"}
-                { key: "modify_issue", name: "COMMON.PERMISIONS_CATEGORIES.ISSUES.MODIFY_ISSUES"}
-                { key: "comment_issue", name: "COMMON.PERMISIONS_CATEGORIES.ISSUES.COMMENT_ISSUES"}
-                { key: "delete_issue", name: "COMMON.PERMISIONS_CATEGORIES.ISSUES.DELETE_ISSUES"}
-            ]
+            issuePermissions = []
+            issuePermissions.push({ key: "view_issues", name: "COMMON.PERMISIONS_CATEGORIES.ISSUES.VIEW_ISSUES"})
+            if !auxiliar
+                issuePermissions.push({ key: "add_issue", name: "COMMON.PERMISIONS_CATEGORIES.ISSUES.ADD_ISSUES"})
+            if ejecutivo
+                issuePermissions.push({ key: "modify_issue", name: "COMMON.PERMISIONS_CATEGORIES.ISSUES.MODIFY_ISSUES"})
+            issuePermissions.push({ key: "comment_issue", name: "COMMON.PERMISIONS_CATEGORIES.ISSUES.COMMENT_ISSUES"})
+            if ejecutivo
+                issuePermissions.push({ key: "delete_issue", name: "COMMON.PERMISIONS_CATEGORIES.ISSUES.DELETE_ISSUES"})
 
             categories.push({
                 name: "COMMON.PERMISIONS_CATEGORIES.ISSUES.NAME",
                 permissions: setActivePermissions(issuePermissions)
             })
 
-            wikiPermissions = [
-                { key: "view_wiki_pages", name: "COMMON.PERMISIONS_CATEGORIES.WIKI.VIEW_WIKI_PAGES"}
-                { key: "add_wiki_page", name: "COMMON.PERMISIONS_CATEGORIES.WIKI.ADD_WIKI_PAGES"}
-                { key: "modify_wiki_page", name: "COMMON.PERMISIONS_CATEGORIES.WIKI.MODIFY_WIKI_PAGES"}
-                { key: "delete_wiki_page", name: "COMMON.PERMISIONS_CATEGORIES.WIKI.DELETE_WIKI_PAGES"}
-                { key: "add_wiki_link", name: "COMMON.PERMISIONS_CATEGORIES.WIKI.ADD_WIKI_LINKS"}
-                { key: "delete_wiki_link", name: "COMMON.PERMISIONS_CATEGORIES.WIKI.DELETE_WIKI_LINKS"}
-                { key: "view_wiki_links", name: "COMMON.PERMISIONS_CATEGORIES.WIKI.VIEW_WIKI_LINKS"}
-            ]
+            wikiPermissions = []
+
+            wikiPermissions.push({ key: "view_wiki_pages", name: "COMMON.PERMISIONS_CATEGORIES.WIKI.VIEW_WIKI_PAGES"})
+            if (!auxiliar)
+                wikiPermissions.push({ key: "add_wiki_page", name: "COMMON.PERMISIONS_CATEGORIES.WIKI.ADD_WIKI_PAGES"})
+                wikiPermissions.push({ key: "modify_wiki_page", name: "COMMON.PERMISIONS_CATEGORIES.WIKI.MODIFY_WIKI_PAGES"})
+            if ejecutivo
+                wikiPermissions.push({ key: "delete_wiki_page", name: "COMMON.PERMISIONS_CATEGORIES.WIKI.DELETE_WIKI_PAGES"})
+            if !auxiliar
+                wikiPermissions.push({ key: "add_wiki_link", name: "COMMON.PERMISIONS_CATEGORIES.WIKI.ADD_WIKI_LINKS"})
+            if ejecutivo
+                wikiPermissions.push({ key: "delete_wiki_link", name: "COMMON.PERMISIONS_CATEGORIES.WIKI.DELETE_WIKI_LINKS"})
+            wikiPermissions.push({ key: "view_wiki_links", name: "COMMON.PERMISIONS_CATEGORIES.WIKI.VIEW_WIKI_LINKS"})
 
             categories.push({
                 name: "COMMON.PERMISIONS_CATEGORIES.WIKI.NAME",
