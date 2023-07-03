@@ -17,3 +17,6 @@ e2e/screenshots/
 e2e/reports/
 app/modules/compile-modules/
 yarn.lock
+
+# IDE Settings
+.idea/
