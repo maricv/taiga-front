@@ -351,7 +351,7 @@ RolePermissionsDirective = ($rootscope, $repo, $confirm, $compile) ->
 
             console.log("test:", role)
 
-            _role = `${role.name}`.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            _role = role.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
             ejecutivo = _role == "ejecutivo"
             auxiliar = _role == "auxiliar"
             administrativo = _role == "administrativo"
