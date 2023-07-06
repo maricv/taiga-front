@@ -7,7 +7,7 @@
     "eventsReconnectTryInterval": 10000,
     "debug": false,
     "debugInfo": false,
-    "defaultLanguage": "en",
+    "defaultLanguage": "es",
     "themes": [
         "taiga"
     ],
